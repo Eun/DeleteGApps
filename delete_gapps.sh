@@ -19,6 +19,7 @@ APPS=(
 	GoogleCalendarSyncAdapter
 	GoogleContactsSyncAdapter
 	GoogleEars
+	GoogleEarth
 	GoogleFeedback
 	GoogleLoginService
 	GoogleOneTimeInitializer
@@ -32,10 +33,12 @@ APPS=(
 	Maps
 	MediaUploader
 	Music2
-	Newstand
+	Newsstand
 	Phonesky
 	PlayGames
 	PlusOne
+	PrebuiltGmail
+	PrebuiltKeep
 	Street
 	Talk
 	Velvet
@@ -55,8 +58,8 @@ echo "Remounting /system..."
 mount -o remount,rw /system
 echo "Deleteing..."
 for i in ${APPS[@]}; do
-	rm -rf /system/app/$i.*
-	rm -rf /system/priv-app/$i.*
+	rm -rf /system/app/$i*
+	rm -rf /system/priv-app/$i*
 done
 echo "Cleaning Cache..."
 rm -rf /data/dalvik-cache
